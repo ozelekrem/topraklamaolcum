@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>⚡ Topraklama Ölçüm Girişi</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <h1>⚡ Topraklama Ölçümü</h1>
+            <p>Mobil Saha Girişi</p>
+        </header>
+
+        <!-- ABONE ARAMA -->
+        <section class="card" id="aramaSection">
+            <h2>🔍 Abone Ara</h2>
+            <div class="input-group">
+                <input type="text" id="aboneNoInput" placeholder="Abone veya Sayaç No" inputmode="text">
+                <button onclick="aboneAra()" class="btn-primary">Ara</button>
+            </div>
+            <p id="aramaHata" class="error-text"></p>
+        </section>
+
+        <!-- ABONE BİLGİLERİ -->
+        <section class="card hidden" id="aboneBilgiSection">
+            <h2>📋 Abone Bilgileri</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">İsim</span>
+                    <span class="value" id="aboneIsim">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Abone No</span>
+                    <span class="value" id="aboneNo">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Sayaç No</span>
+                    <span class="value" id="sayacNo">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Konum</span>
+                    <span class="value" id="aboneKonum">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Tür</span>
+                    <span class="value" id="aboneTur">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Son Ölçüm</span>
+                    <span class="value" id="sonOlcum">-</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÖLÇÜM GİRİŞİ -->
+        <section class="card hidden" id="olcumSection">
+            <h2>📊 Ölçüm Girişi</h2>
+            
+            <div class="input-group">
+                <label>Personel Adı</label>
+                <input type="text" id="personelInput" placeholder="Adınızı girin">
+            </div>
+
+            <div class="input-group">
+                <label>Tarih</label>
+                <input type="date" id="tarihInput">
+            </div>
+
+            <h3>Ölçüm Noktaları</h3>
+            <div id="noktalarContainer">
+                <!-- Dinamik satırlar buraya eklenecek -->
+            </div>
+            
+            <button onclick="satirEkle()" class="btn-secondary">➕ Yeni Nokta Ekle</button>
+
+            <div class="action-buttons">
+                <button onclick="olcumKaydet()" class="btn-success">💾 Kaydet</button>
+                <button onclick="temizle()" class="btn-danger">🗑️ Temizle</button>
+            </div>
+        </section>
+
+        <!-- BAŞARI MESAJI -->
+        <div class="success-modal hidden" id="successModal">
+            <div class="modal-content">
+                <span class="success-icon">✅</span>
+                <h2>Başarılı!</h2>
+                <p id="successMessage">Ölçüm kaydedildi.</p>
+                <button onclick="yeniOlcum()" class="btn-primary">Yeni Ölçüm</button>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="aboneIdInput">
+    <script src="/static/app.js"></script>
+</body>
+</html>

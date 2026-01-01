@@ -1,0 +1,345 @@
+/* =============================================
+   MOBİL TOPRAKLAMA ÖLÇÜM UYGULAMASI - CSS
+   Modern, Koyu Tema, Mobil Öncelikli
+   ============================================= */
+
+:root {
+    --bg-primary: #1e1e24;
+    --bg-secondary: #25252b;
+    --bg-card: #2b2b36;
+    --accent-blue: #4a90e2;
+    --accent-green: #28a745;
+    --accent-red: #e74c3c;
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaa;
+    --border-color: #383842;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    padding-bottom: 100px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 24px 16px;
+    background: linear-gradient(135deg, var(--accent-blue), #357abd);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* CARD */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 16px 0 12px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.input-group input::placeholder {
+    color: #666;
+}
+
+/* BUTTONS */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.15s, opacity 0.15s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), #357abd);
+    color: white;
+    padding: 14px 24px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.btn-secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px dashed var(--border-color);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--accent-green), #1e7e34);
+    color: white;
+    padding: 16px 24px;
+    font-size: 16px;
+    flex: 1;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--accent-red), #c0392b);
+    color: white;
+    padding: 16px 24px;
+    font-size: 16px;
+    flex: 1;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* INFO GRID */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.info-item {
+    background-color: var(--bg-secondary);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.info-item .label {
+    display: block;
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.info-item .value {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    word-break: break-all;
+}
+
+/* ÖLÇÜM NOKTASI SATIRI */
+.nokta-satir {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.nokta-satir .satir-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.nokta-satir .satir-title {
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+.nokta-satir .btn-remove {
+    background: var(--accent-red);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nokta-satir .satir-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.nokta-satir input,
+.nokta-satir select {
+    padding: 12px;
+    font-size: 14px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+}
+
+.nokta-satir .sonuc-select {
+    grid-column: span 2;
+}
+
+/* SUCCESS MODAL */
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    padding: 32px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 320px;
+    width: 100%;
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.success-icon {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.modal-content h2 {
+    color: var(--accent-green);
+    margin-bottom: 8px;
+}
+
+.modal-content p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* ERROR TEXT */
+.error-text {
+    color: var(--accent-red);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none !important;
+}
+
+/* LOADING STATE */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 400px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nokta-satir .satir-inputs {
+        grid-template-columns: 1fr;
+    }
+    
+    .nokta-satir .sonuc-select {
+        grid-column: span 1;
+    }
+}
