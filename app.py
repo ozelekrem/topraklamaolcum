@@ -37,7 +37,7 @@ def abone_ara(abone_no):
         # Abone numarası veya sayaç numarası ile arama
         cursor.execute("""
             SELECT id, abone_no, sayac_no, isim, ilce, mahalle, 
-                   daire_baskanligi, tur, tarife, acik_adres
+                   daire_baskanligi, kullanim_turu, tarife, acik_adres
             FROM aboneler 
             WHERE abone_no ILIKE %s OR sayac_no ILIKE %s
             LIMIT 1
@@ -53,6 +53,7 @@ def abone_ara(abone_no):
     
     except Exception as e:
         return jsonify({"success": False, "message": str(e)}), 500
+
 
 # --- API: SON ÖLÇÜM BİLGİSİ ---
 @app.route('/api/abone/<int:abone_id>/son-olcum')

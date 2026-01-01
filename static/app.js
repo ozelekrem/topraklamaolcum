@@ -61,7 +61,7 @@ function aboneBilgileriniGoster(abone) {
     document.getElementById('aboneNo').textContent = abone.abone_no || '-';
     document.getElementById('sayacNo').textContent = abone.sayac_no || '-';
     document.getElementById('aboneKonum').textContent = `${abone.ilce || ''} / ${abone.mahalle || ''}`;
-    document.getElementById('aboneTur').textContent = abone.tur || '-';
+    document.getElementById('aboneTur').textContent = abone.kullanim_turu || '-';
 
     document.getElementById('aboneBilgiSection').classList.remove('hidden');
     document.getElementById('olcumSection').classList.remove('hidden');
